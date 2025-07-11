@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Zesty Hub Journey • Team Volt</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(180deg, #e1f5fe 0, #fff 100%);
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: #232c3d;
+    }
+    .page {
+      max-width: 900px;
+      min-height: 1190px;
+      margin: 40px auto 0 auto;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 13px 32px 0 rgba(41,182,246,0.12);
+      padding: 54px 55px 40px 55px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      font-size: 1.13rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-header {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 18px;
+    }
+    .emoji-large {
+      font-size: 2.4rem;
+    }
+    .highlight {
+      background: linear-gradient(90deg, #bbdefb 60%, #fffde7 100%);
+      color: #16a2e8;
+      border-radius: 7px;
+      padding: 2px 12px 2px 10px;
+      font-weight: 600;
+      font-size: 1.12rem;
+      letter-spacing: 0.01em;
+      border-left: 4px solid #ffd600;
+    }
+    .divider {
+      height: 6px;
+      width: 80px;
+      margin: 18px 0 28px 0;
+      border-radius: 10px;
+      background: linear-gradient(90deg, #3949ab, #42a5f5, #29b6f6);
+      opacity: 0.78;
+    }
+    h1, h2, h3 {
+      margin: 0;
+      font-weight: 600;
+    }
+    h1 { font-size: 2.15rem; color: #1a237e; }
+    h2 { font-size: 1.32rem; margin-top: 36px; color: #1565c0; }
+    h3{ font-size: 1.11rem; color: #00bcd4;}
+    ul, li, p { font-size: 1.1rem; line-height: 1.77; }
+    ul { padding-left: 28px; margin-bottom: 11px;}
+    .callout {
+      background: linear-gradient(100deg, #e3f2fd, #fffde7);
+      color: #039be5;
+      border-left: 6px solid #ffd600;
+      padding: 12px 18px;
+      border-radius: 7px;
+      margin: 11px 0 18px 0;
+      font-size: 1rem;
+      font-style: italic;
+    }
+    .team-card {
+      background: linear-gradient(90deg, #fbc2eb 0, #a6c1ee 100%);
+      border-radius: 10px;
+      padding: 22px 26px 12px 24px;
+      box-shadow: 0 2px 12px 0 rgba(33,150,243,0.09);
+      margin: 11px auto 26px auto;
+      max-width: 630px;
+    }
+ 
+    .footer {
+      margin-top: auto;
+      padding-top: 15px;
+      text-align: right;
+      color: #b0b5bc;
+      font-size: 1.05rem;
+    }
+    .card-grid {
+      display: flex;
+      gap: 22px;
+      margin: 20px 0;
+      flex-wrap: wrap;
+    }
+    .feat-card {
+      flex: 1 1 40%;
+      min-width: 250px;
+      background: #f8bbd0;
+      background: linear-gradient(120deg, #ffe0b2 60%, #81d4fa 100%);
+      border-radius: 12px;
+      padding: 22px 18px 11px 18px;
+      margin-bottom: 10px;
+      color: #3e2723;
+      box-shadow: 0 1px 4px #eceff1;
+      font-size: 1.07rem;
+    }
+    .mini-title {
+      font-weight: 600;
+      color: #0288d1;
+      font-size: 1.06rem;
+    }
+    .sub-note {color: #7b1fa2; font-style:italic; font-size:1.01rem; margin-bottom: 6px;}
+    .btn {
+      display: inline-block;
+      background: linear-gradient(90deg,#00c9ff 20%,#92fe9d 100%);
+      color: #263238;
+      border: none;
+      padding: 9px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      margin-top: 10px;
+      font-size: 1.09rem;
+      transition: background .17s;
+      margin-bottom: 7px;
+    }
+    blockquote {
+      background:#f1f8e9;
+      color:#558b2f;
+      border-left:5px solid #aed581;
+      margin:15px 0 15px 0;
+      padding:10px 27px 12px 20px;
+      border-radius:0 25px 25px 0;
+      font-size: 1rem;
+    }
+    .section {
+      margin-bottom: 23px;
+    }
+    .page-number {
+      position: absolute;
+      right: 50px;
+      bottom: 18px;
+      font-size: 1.16rem;
+      color: #AED581;
+      font-weight: bold;
+      opacity: .81;
+      letter-spacing: .02em;
+    }
+    hr { margin: 34px 0 40px 0; border: none; height: 2px; background: #b2ebf2; }
+    @media print {
+      .page { page-break-after: always; }
+      body { background:#fff; }
+    }
+    /* Add more color for variety per page! */
+    .bg-b2 { background:linear-gradient(120deg,#e3f2fd 80%, #fffde7 100%);}
+    .bg-green {background:linear-gradient(90deg,#d0f8ce 60%,#fffde7);}
+    .bg-pink {background:linear-gradient(90deg,#f8bbd0 60%,#fffde7);}
+    .bg-blue {background:linear-gradient(90deg,#b3e5fc 0,#ffffff);}
+    .bg-violet {background:linear-gradient(90deg,#ede7f6 0,#fffde7);}
+  </style>
+</head>
+<body>
+
+<!-- PAGE 1 – Introduction – Real-Time Engineer -->
+<div class="page bg-b2">
+  <div class="page-header">
+    <span class="emoji-large">🌐</span>
+    <span class="highlight">Introduction – WebRTC & WebSocket Engineer</span>
+  </div>
+  <div class="divider"></div>
+  <p>
+    Hi! I’m <strong>Sameer Javed</strong>, the WebRTC & WebSocket Engineer at <strong>Team Volt</strong>. My expertise powers the ultra-responsive real-time features in Zesty Hub—from seamless P2P calls to live activity sync.
+  </p>
+  <p>
+    While Firestore handles data syncing, I built a performant signaling and real-time layer that acts fast—under 300 ms latency—so users experience instant feedback.
+  </p>
+  <blockquote>“Realtime can’t wait. It must feel fast, fluid, and frictionless.”</blockquote>
+  <p class="sub-note">
+    On any given day: designing signaling channels, optimizing ICE negotiation, handling timeouts, and ensuring smooth media pipelines across network conditions.
+  </p>
+  <div class="footer">Zesty Hub © 2024 | Page 1</div>
+  <div class="page-number">1</div>
+</div>
+
+
+<!-- PAGE 2 – Vision & Impact -->
+<div class="page bg-blue">
+  <div class="page-header">
+    <span class="emoji-large">🎯</span>
+    <span class="highlight">Vision & Real-Time Impact</span>
+  </div>
+  <div class="divider"></div>
+  <p>
+    The goal? Real-time so fast you don’t notice you’re even in another browser. My work brings:
+  </p>
+  <ul>
+    <li>🌍 Instantaneously updated presence (online/typing indicators)</li>
+    <li>📞 WebRTC voice/video calls with sub-second cold start</li>
+    <li>🔄 Real-time mic/camera toggling across participants</li>
+    <li>🔔 In-call features like live reactions and hand-raise</li>
+  </ul>
+  <p>
+    It’s not just tech—it’s about delivering a live presence that feels like being together, even from miles apart.
+  </p>
+  <div class="footer">Zesty Hub © 2024 | Page 2</div>
+  <div class="page-number">2</div>
+</div>
+
+
+<!-- PAGE 3 – Architecture Overview -->
+<div class="page bg-green">
+  <div class="page-header">
+    <span class="emoji-large">📐</span>
+    <span class="highlight">WebSocket + WebRTC Architecture</span>
+  </div>
+  <div class="divider"></div>
+  <p>
+    I designed a lightweight hybrid system:
+  </p>
+  <h3>1. WebSocket Gateway</h3>
+  <ul>
+    <li>Scaled using Node.js + ws library</li>
+    <li>Handles authentication, room management, and broadcasts</li>
+    <li>Maintains connection state for presence updates</li>
+  </ul>
+  <h3>2. Signaling Layer</h3>
+  <ul>
+    <li>Handles ICE negotiations, offer/answer exchange</li>
+    <li>Fallbacks over WebSocket if STUN/TURN fail</li>
+  </ul>
+  <h3>3. Client Integration</h3>
+  <ul>
+    <li>Hooks into React UI for stateful call controls</li>
+    <li>Typed events for mic/camera toggles, screen share</li>
+  </ul>
+  <div class="callout">“A solid architecture hides its complexity through smart design.”</div>
+  <div class="footer">Zesty Hub © 2024 | Page 3</div>
+  <div class="page-number">3</div>
+</div>
+
+<!-- PAGE 4 – Signaling & Peer Flow -->
+<div class="page bg-pink">
+  <div class="page-header">
+    <span class="emoji-large">🔄</span>
+    <span class="highlight">Connection & Signaling Flow</span>
+  </div>
+  <div class="divider"></div>
+  <ol>
+    <li>User joins call → WebSocket handshake created</li>
+    <li>Client A sends WebRTC offer → server routes to B</li>
+    <li>Client B replies with answer → A initiates ICE gathers</li>
+    <li>ICE candidates exchanged real-time via WS</li>
+    <li>Peer-to-peer media streams established</li>
+  </ol>
+  <p>
+    Graceful fallback detects blocked ports and auto-switches to TURN servers when needed.
+  </p>
+  <blockquote>“Every negotiation path must account for the worst-case connection failure.”</blockquote>
+  <div class="footer">Zesty Hub © 2024 | Page 4</div>
+  <div class="page-number">4</div>
+</div>
+
+
+<!-- PAGE 5 – Real-Time State Management -->
+<div class="page bg-violet">
+  <div class="page-header">
+    <span class="emoji-large">📡</span>
+    <span class="highlight">Live State & Signaling</span>
+  </div>
+  <div class="divider"></div>
+  <ul>
+    <li>Presence broadcast on WS: { userId, online, typing }</li>
+    <li>Call state sync: joining, leaving, toggles</li>
+    <li>Room-level events like “muteAll” or “kickUser”</li>
+    <li>Custom UI hooks for live visual feedback</li>
+  </ul>
+  <p>
+    This logic ensures consistent, transparent shared state across users in real-time.
+  </p>
+  <div class="footer">Zesty Hub © 2024 | Page 5</div>
+  <div class="page-number">5</div>
+</div>
+
+<!-- PAGE 6 – Performance & Optimization -->
+<div class="page bg-blue">
+  <div class="page-header">
+    <span class="emoji-large">⚙️</span>
+    <span class="highlight">Performance Optimization</span>
+  </div>
+  <div class="divider"></div>
+  <ul>
+    <li>Adaptive bitrate control for screen-sharing</li>
+    <li>Batching signaling messages to reduce chattiness</li>
+    <li>Heartbeat & reconnection with exponential backoff</li>
+    <li>Profiling: median RTT <200 ms, reconnection <2 s</li>
+  </ul>
+  <p>
+    These techniques ensure low latency and high reliability across global regions.
+  </p>
+  <blockquote>“Powerful real-time UX demands periodic tuning and metrics-driven optimization.”</blockquote>
+  <div class="footer">Zesty Hub © 2024 | Page 6</div>
+  <div class="page-number">6</div>
+</div>
+
+
+<!-- PAGE 7 – NAT Traversal & Resilience -->
+<div class="page bg-pink">
+  <div class="page-header">
+    <span class="emoji-large">🛰️</span>
+    <span class="highlight">NAT / TURN Resilience</span>
+  </div>
+  <div class="divider"></div>
+  <p>
+    Real-time across NATs involves:
+  </p>
+  <ul>
+    <li>STUN servers for external IP lookup</li>
+    <li>TURN as fallback for media proxy</li>
+    <li>Dynamic server selection by region & latency</li>
+    <li>Auto-jitter mitigation for unstable networks</li>
+  </ul>
+  <blockquote>“In peer-to-peer, not all networks are equal—adaptivity is survival.”</blockquote>
+  <div class="footer">Zesty Hub © 2024 | Page 7</div>
+  <div class="page-number">7</div>
+</div>
+
+
+<!-- PAGE 8 – Advanced In-Call Features -->
+<div class="page bg-b2">
+  <div class="page-header">
+    <span class="emoji-large">✨</span>
+    <span class="highlight">Advanced Call Features</span>
+  </div>
+  <div class="divider"></div>
+  <ul>
+    <li>Active speaker detection → UI highlight</li>
+    <li>Live reactions piped via WS (#heart, clap)</li>
+    <li>Hand-raise support baked in alongside chat</li>
+    <li>Seamless screen sharing + audio mixed peer stream</li>
+  </ul>
+  <p>
+    These micro-interactions create a vibrant, live experience during group calls.
+  </p>
+  <div class="footer">Zesty Hub © 2024 | Page 8</div>
+  <div class="page-number">8</div>
+</div>
+
+
+<!-- PAGE 9 – Testing & Reliability -->
+<div class="page bg-green">
+  <div class="page-header">
+    <span class="emoji-large">🧪</span>
+    <span class="highlight">Testing & Reliability</span>
+  </div>
+  <div class="divider"></div>
+  <ul>
+    <li>Unit tests for signaling and WS handlers</li>
+    <li>Simulated packet loss & delay tests</li>
+    <li>Automated nightly stress tests with 50+ peers</li>
+    <li>Continuous monitoring: reconnection, memory leaks, ice failures</li>
+  </ul>
+  <p>
+    This disciplined testing ensures production-grade stability across global usage.
+  </p>
+  <div class="footer">Zesty Hub © 2024 | Page 9</div>
+  <div class="page-number">9</div>
+</div>
+
+
+<!-- PAGE 10 – Future Roadmap -->
+<div class="page bg-violet">
+  <div class="page-header">
+    <span class="emoji-large">🚀</span>
+    <span class="highlight">Future Roadmap & Goals</span>
+  </div>
+  <div class="divider"></div>
+  <h2>Next Steps:</h2>
+  <ul>
+    <li>🧭 Multi-region WS redundancy & auto-failover</li>
+    <li>🗣️ Encrypted end-to-end media streams (E2EE)</li>
+    <li>🧩 Modular SDK for third-party embedding</li>
+    <li>📈 Call analytics (RTT, jitter, packet loss) dashboards</li>
+  </ul>
+  <p>
+    The real-time layer is just beginning—our roadmap powers the future of seamless digital presence.
+  </p>
+  <blockquote>“Realtime innovation never stops—it evolves.”</blockquote>
+  <div class="footer">Zesty Hub © 2024 | Page 10</div>
+  <div class="page-number">10</div>
+</div>
+
+<!-- PAGE 11 – Call UX & UI Integration -->
+<div class="page bg-b2">
+  <div class="page-header">
+    <span class="emoji-large">📹</span>
+    <span class="highlight">Call UX Integration</span>
+  </div>
+  <div class="divider"></div>
+  <p>
+    I integrated frontend state to reflect real-time updates:
+  </p>
+  <ul>
+    <li>Call button states: joining, connected, loading spinner</li>
+    <li>User avatar shimmer during peer connection</li>
+    <li>Global mute/unmute indicators via WS events</li>
+    <li>Real-time toggle buttons bound to media tracks</li>
+  </ul>
+  <blockquote>“UX is only as good as the backend that powers it.”</blockquote>
+  <div class="footer">Zesty Hub © 2024 | Page 11</div>
+  <div class="page-number">11</div>
+</div>
+
+<!-- PAGE 12 – Screen Share -->
+<div class="page bg-blue">
+  <div class="page-header">
+    <span class="emoji-large">💻</span>
+    <span class="highlight">Screen Sharing Module</span>
+  </div>
+  <div class="divider"></div>
+  <ul>
+    <li>UI toggle triggers getDisplayMedia</li>
+    <li>Multiple stream tracks combined with audio</li>
+    <li>Screen sharing detected via track.kind</li>
+    <li>State broadcast to all participants to resize tiles</li>
+  </ul>
+  <div class="footer">Zesty Hub © 2024 | Page 12</div>
+  <div class="page-number">12</div>
+</div>
+
+<!-- PAGE 13 – Peer Connection Handling -->
+<div class="page bg-green">
+  <div class="page-header">
+    <span class="emoji-large">🛠️</span>
+    <span class="highlight">PeerConnection Management</span>
+  </div>
+  <div class="divider"></div>
+  <ul>
+    <li>Single RTCPeerConnection per peer</li>
+    <li>Ice candidate queuing until connection ready</li>
+    <li>Dynamic renegotiation support</li>
+    <li>Event listeners: ontrack, oniceconnectionstatechange</li>
+  </ul>
+  <blockquote>“Each peer is stateful and independent—separate yet synchronized.”</blockquote>
+  <div class="footer">Zesty Hub © 2024 | Page 13</div>
+  <div class="page-number">13</div>
+</div>
+
+<!-- PAGE 14 – Reconnection Logic -->
+<div class="page bg-pink">
+  <div class="page-header">
+    <span class="emoji-large">🔁</span>
+    <span class="highlight">Reconnection & Resilience</span>
+  </div>
+  <div class="divider"></div>
+  <ul>
+    <li>Heartbeat ping/pong over WebSocket</li>
+    <li>Auto-rejoin on disconnect</li>
+    <li>Track ICE reconnections and fire WS updates</li>
+    <li>User-visible retry UI with countdown</li>
+  </ul>
+  <div class="footer">Zesty Hub © 2024 | Page 14</div>
+  <div class="page-number">14</div>
+</div>
+
+<!-- PAGE 15 – Stream Quality Control -->
+<div class="page bg-violet">
+  <div class="page-header">
+    <span class="emoji-large">📈</span>
+    <span class="highlight">Stream Quality Control</span>
+  </div>
+  <div class="divider"></div>
+  <ul>
+    <li>Local bitrate throttling via RTCRtpSender</li>
+    <li>Frame rate adapts to CPU & bandwidth</li>
+    <li>Preferred codecs exchanged in SDP</li>
+    <li>Bandwidth estimation via getStats()</li>
+  </ul>
+  <blockquote>“Control your stream, don’t let the stream control you.”</blockquote>
+  <div class="footer">Zesty Hub © 2024 | Page 15</div>
+  <div class="page-number">15</div>
+</div>
+
+<!-- PAGE 16 – Cross-Device Support -->
+<div class="page bg-blue">
+  <div class="page-header">
+    <span class="emoji-large">📲</span>
+    <span class="highlight">Multi-Device Compatibility</span>
+  </div>
+  <div class="divider"></div>
+  <ul>
+    <li>Desktop & mobile responsive media controls</li>
+    <li>Fallback silent-mode for iOS limitations</li>
+    <li>Dynamic resolution based on screen width</li>
+    <li>Orientation change adjustments mid-call</li>
+  </ul>
+  <div class="footer">Zesty Hub © 2024 | Page 16</div>
+  <div class="page-number">16</div>
+</div>
+
+<!-- PAGE 17 – Security & Privacy -->
+<div class="page bg-green">
+  <div class="page-header">
+    <span class="emoji-large">🔒</span>
+    <span class="highlight">Security & Privacy</span>
+  </div>
+  <div class="divider"></div>
+  <ul>
+    <li>Rooms secured via WS auth tokens</li>
+    <li>No SDP logs sent to backend</li>
+    <li>Encrypted media via DTLS</li>
+    <li>Permission prompts handled gracefully</li>
+  </ul>
+  <blockquote>“Privacy is not optional—it’s expected.”</blockquote>
+  <div class="footer">Zesty Hub © 2024 | Page 17</div>
+  <div class="page-number">17</div>
+</div>
+
+<!-- PAGE 18 – Performance Metrics -->
+<div class="page bg-pink">
+  <div class="page-header">
+    <span class="emoji-large">📊</span>
+    <span class="highlight">Real-Time Metrics</span>
+  </div>
+  <div class="divider"></div>
+  <ul>
+    <li>RTT, jitter, packet loss gathered per peer</li>
+    <li>ICE connection time metrics tracked</li>
+    <li>Client-visible live stats display</li>
+    <li>Alerts when quality degrades</li>
+  </ul>
+  <div class="footer">Zesty Hub © 2024 | Page 18</div>
+  <div class="page-number">18</div>
+</div>
+
+<!-- PAGE 19 – Stress Testing -->
+<div class="page bg-blue">
+  <div class="page-header">
+    <span class="emoji-large">🧪</span>
+    <span class="highlight">Stress Testing & Scaling</span>
+  </div>
+  <div class="divider"></div>
+  <ul>
+    <li>Simulated 8×8 grid calls</li>
+    <li>Automated load tests via Puppeteer</li>
+    <li>Memory/CPU profiling under stress</li>
+    <li>Scalable WS server via clustering</li>
+  </ul>
+  <blockquote>“Scale isn’t optional—it’s part of delivery.”</blockquote>
+  <div class="footer">Zesty Hub © 2024 | Page 19</div>
+  <div class="page-number">19</div>
+</div>
+
+<!-- PAGE 20 – Monitoring & Alerts -->
+<div class="page bg-green">
+  <div class="page-header">
+    <span class="emoji-large">⏱️</span>
+    <span class="highlight">Realtime Monitoring & Alerts</span>
+  </div>
+  <div class="divider"></div>
+  <ul>
+    <li>Uptime monitored via WS heartbeats</li>
+    <li>Ice failure alerts emailed/dev-tooled</li>
+    <li>Auto-restart on crash detection</li>
+    <li>Analytics displayed in Grafana</li>
+  </ul>
+  <div class="footer">Zesty Hub © 2024 | Page 20</div>
+  <div class="page-number">20</div>
+</div>
+
+<!-- PAGE 21 – Dev Workflow -->
+<div class="page bg-pink">
+  <div class="page-header">
+    <span class="emoji-large">🎛️</span>
+    <span class="highlight">Dev Workflow & CI/CD</span>
+  </div>
+  <div class="divider"></div>
+  <ul>
+    <li>Git workflow: feature/ws-signaling, PR reviews</li>
+    <li>CI runs unit/integration tests for signaling logic</li>
+    <li>Auto-deploy WS server via Heroku pipelines</li>
+    <li>Automated API schema validation</li>
+  </ul>
+  <div class="footer">Zesty Hub © 2024 | Page 21</div>
+  <div class="page-number">21</div>
+</div>
+
+<!-- PAGE 22 – Documentation & SDK -->
+<div class="page bg-blue">
+  <div class="page-header">
+    <span class="emoji-large">📚</span>
+    <span class="highlight">Docs & Developer SDK</span>
+  </div>
+  <div class="divider"></div>
+  <ul>
+    <li>Docs for WS events and call lifecycle</li>
+    <li>Public SDK for embedding signaling</li>
+    <li>Code examples in React and Vue</li>
+    <li>Swagger spec for event interfaces</li>
+  </ul>
+  <div class="footer">Zesty Hub © 2024 | Page 22</div>
+  <div class="page-number">22</div>
+</div>
+
+<!-- PAGE 23 – User Feedback -->
+<div class="page bg-green">
+  <div class="page-header">
+    <span class="emoji-large">🗣️</span>
+    <span class="highlight">User Feedback & Iteration</span>
+  </div>
+  <div class="divider"></div>
+  <ul>
+    <li>Beta testers praised sub-1 s cold join time</li>
+    <li>Users requested hand-raise & live emoji</li>
+    <li>We built mic-indicator and volume bars post-feedback</li>
+    <li>Iterated UX design based on session recordings</li>
+  </ul>
+  <div class="footer">Zesty Hub © 2024 | Page 23</div>
+  <div class="page-number">23</div>
+</div>
+
+<!-- PAGE 24 – Learnings & Takeaways -->
+<div class="page bg-pink">
+  <div class="page-header">
+    <span class="emoji-large">🧠</span>
+    <span class="highlight">Learnings & Takeaways</span>
+  </div>
+  <div class="divider"></div>
+  <ul>
+    <li>ICE can surprise you—always profile across networks</li>
+    <li>Metrics-led tuning keeps UX smooth</li>
+    <li>Fallback logic is essential: STUN → TURN → reconnect</li>
+    <li>Documentation is critical for future scaling</li>
+  </ul>
+  <blockquote>“Real-time is trial by fire—test early, iterate fast.”</blockquote>
+  <div class="footer">Zesty Hub © 2024 | Page 24</div>
+  <div class="page-number">24</div>
+</div>
+
+<!-- PAGE 25 – Final Thoughts -->
+<div class="page bg-violet">
+  <div class="page-header">
+    <span class="emoji-large">🎉</span>
+    <span class="highlight">Final Thoughts & Thanks</span>
+  </div>
+  <div class="divider"></div>
+  <p>
+    Building real-time presence features taught me how nuanced latency, connectivity, and UX really are. I’m proud to have made team calls feel fast, fun, and friction-free.
+  </p>
+  <p>
+    Thanks to Divyansh, Amir, and Priyanshu for the seamless integration and feedback loops—it wouldn’t shine without front/backend harmony.
+  </p>
+  <blockquote>“We built presence that feels like people, not just pixels.”</blockquote>
+  <p class="sub-note">—Sameer Javed, WebRTC & WebSocket Engineer</p>
+  <div class="footer">Zesty Hub © 2024 | Page 25</div>
+  <div class="page-number">25</div>
+</div>
